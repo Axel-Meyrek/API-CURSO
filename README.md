@@ -4,7 +4,7 @@ Esta documentación detalla los recursos y endpoints de la API de Música, dise�
 
 ## ⚙️ Configuración Base
 
-- **Base URL:** `http://localhost:3000/api`
+- **Base URL:** `musica-curso-api.vercel.app`
 - **Autenticación:** Requerida para todos los endpoints.
 - **Cabeceras (Headers):**
   - `Authorization: Bearer TOKEN123`
@@ -126,9 +126,49 @@ Catálogo de géneros musicales disponibles.
 
 ---
 
-## 🧠 Retos para Estudiantes (Postman)
+## 📦 Body Examples (JSON)
 
-Usa **Postman** para completar las siguientes tareas:
+Para las peticiones `POST`, `PUT` o `PATCH`, debes enviar un JSON en el **Body** (seleccionando `raw` y `JSON` en Postman).
+
+### Crear/Actualizar Artista (`POST` / `PUT`)
+```json
+{
+  "name": "Bad Bunny",
+  "genre": "Urbano",
+  "country": "Puerto Rico"
+}
+```
+
+### Crear/Actualizar Canción (`POST` / `PUT`)
+```json
+{
+  "title": "Dakiti",
+  "artist": "Bad Bunny",
+  "duration": 205,
+  "genre": "Urbano"
+}
+```
+
+### Actualización Parcial (`PATCH`)
+Solo envía la propiedad que deseas cambiar.
+```json
+{
+  "duration": 180
+}
+```
+
+### Crear Playlist con canciones (`POST`)
+```json
+{
+  "name": "Entrenamiento",
+  "description": "Música para el gym",
+  "songs": [1, 4, 5]
+}
+```
+
+---
+
+## 🧠 Retos
 
 1. **GET All**: Trae todas las canciones de `/api/songs`.
 2. **Specific Artist**: Obtén los detalles del artista con ID `2`.
