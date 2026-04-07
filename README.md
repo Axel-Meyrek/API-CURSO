@@ -4,7 +4,7 @@ Esta documentación detalla los recursos y endpoints de la API de Música, dise�
 
 ## ⚙️ Configuración Base
 
-- **Base URL:** `musica-curso-api.vercel.app`
+- **Base URL:** `musica-curso-api.vercel.app/api`
 - **Autenticación:** Requerida para todos los endpoints.
 - **Cabeceras (Headers):**
   - `Authorization: Bearer TOKEN123`
