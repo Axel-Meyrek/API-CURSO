@@ -5,7 +5,19 @@ const createController = (resourceName) => {
 
   return {
     getAll: (req, res) => {
-      res.json(data);
+      let filteredData = [...data];
+      const queryParams = Object.keys(req.query);
+
+      if (queryParams.length > 0) {
+        filteredData = filteredData.filter(item => {
+          return queryParams.every(key => {
+            if (item[key] === undefined) return true;
+            return String(item[key]).toLowerCase() === String(req.query[key]).toLowerCase();
+          });
+        });
+      }
+
+      res.json(filteredData);
     },
 
     getById: (req, res) => {

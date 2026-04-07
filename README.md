@@ -126,6 +126,16 @@ Catálogo de géneros musicales disponibles.
 
 ---
 
+## 🔍 Filtrado
+Todos los endpoints de tipo `GET` (listado) admiten filtrado mediante parámetros de consulta (query parameters). Puedes filtrar por cualquier propiedad del recurso.
+
+**Ejemplos:**
+- `GET /api/songs?genre=Trap`
+- `GET /api/artists?country=Argentina`
+- `GET /api/albums?releaseYear=2023`
+
+---
+
 ## 📦 Body Examples (JSON)
 
 Para las peticiones `POST`, `PUT` o `PATCH`, debes enviar un JSON en el **Body** (seleccionando `raw` y `JSON` en Postman).
@@ -176,7 +186,7 @@ Solo envía la propiedad que deseas cambiar.
 4. **Full Update**: Cambia todos los datos del álbum `3` usando PUT.
 5. **Partial Edit**: Cambia solo la duración de una canción con PATCH.
 6. **Remove Genre**: Elimina el género con ID `5` usando DELETE.
-7. **Filter Check**: Visualiza solo canciones de género "Jazz" (filtrado manual en respuesta).
+7. **Filter Check**: Usa `?genre=Jazz` en `/api/songs` para filtrar automáticamente por género.
 8. **Auth Test**: Intenta un GET sin el header `Authorization` y confirma el error 401.
 9. **Error 404**: Busca un artista con ID `999` y confirma el error.
 10. **Link Logic**: Crea una canción y luego usa PATCH en una playlist para agregar su ID al array `songs`.
